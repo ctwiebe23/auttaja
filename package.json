@@ -1,0 +1,11 @@
+{
+  "name": "@ctwiebe23/helpers",
+  "version": "1.0.0",
+  "description": "Collection of helper functions I use in personal projects",
+  "license": "MIT",
+  "author": "C Wiebe <ctwiebe23@gmail.com>",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+  }
+}
