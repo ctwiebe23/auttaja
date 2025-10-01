@@ -1,6 +1,6 @@
 {
   "name": "@ctwiebe23/auttaja",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Collection of helper functions and classes I use in personal projects",
   "license": "MIT",
   "author": "C Wiebe <ctwiebe23@gmail.com>",
@@ -11,6 +11,5 @@
     "type": "git",
     "url": "git+https://github.com/ctwiebe23/auttaja.git"
   },
-  "scripts": {
-  }
+  "scripts": {}
 }
