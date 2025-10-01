@@ -22,6 +22,70 @@ margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
   <style type="text/css">* {
 padding:0;
@@ -29,7 +93,7 @@ margin:0;
 box-sizing:border-box;
 }
 :root {
---rule:1px;
+--rule:2px;
 --sm:8px;
 --md:16px;
 --lg:32px;
@@ -92,7 +156,7 @@ margin-bottom:var(--md);
 ol, ul {
 margin-left:var(--indent);
 }
-:is(h1, h2, h3, h4, h6, p, ol, ul, dl, pre) + :is(p, ol, ul, dl, pre) {
+:is(h1, h2, h3, h4, h6, p, ol, ul, dl, pre, blockquote) + :is(p, ol, ul, dl, pre, blockquote) {
 margin-block:var(--md);
 }
 @media (width > 700px) {
@@ -158,6 +222,10 @@ text-transform:lowercase;
 }
 nav#TOC a:hover::after {
 content:none;
+}
+blockquote {
+padding-left:var(--lg);
+border-left:var(--rule) solid var(--fg);
 }
 </style>
   <link href="data:text/html; charset=utf-8;charset=utf-8,%3Chtml%20lang%3D%22en%22%20dir%3Dltr%3E%3Cmeta%20charset%3Dutf%2D8%3E%3Cmeta%20name%3Dviewport%20content%3D%22initial%2Dscale%3D1%2C%20minimum%2Dscale%3D1%2C%20width%3Ddevice%2Dwidth%22%3E%3Ctitle%3EError%20404%20%28Not%20Found%29%21%211%3C%2Ftitle%3E%3Cstyle%3E%2A%7Bmargin%3A0%3Bpadding%3A0%7Dhtml%2Ccode%7Bfont%3A15px%2F22px%20arial%2Csans%2Dserif%7Dhtml%7Bbackground%3A%23fff%3Bcolor%3A%23222%3Bpadding%3A15px%7Dbody%7Bcolor%3A%23222%3Btext%2Dalign%3Aunset%3Bmargin%3A7%25%20auto%200%3Bmax%2Dwidth%3A390px%3Bmin%2Dheight%3A180px%3Bpadding%3A30px%200%2015px%3B%7D%2A%20%3E%20body%7Bbackground%3Aurl%28%2F%2Fwww%2Egoogle%2Ecom%2Fimages%2Ferrors%2Frobot%2Epng%29%20100%25%205px%20no%2Drepeat%3Bpadding%2Dright%3A205px%7Dp%7Bmargin%3A11px%200%2022px%3Boverflow%3Ahidden%7Dpre%7Bwhite%2Dspace%3Apre%2Dwrap%3B%7Dins%7Bcolor%3A%23777%3Btext%2Ddecoration%3Anone%7Da%20img%7Bborder%3A0%7D%40media%20screen%20and%20%28max%2Dwidth%3A772px%29%7Bbody%7Bbackground%3Anone%3Bmargin%2Dtop%3A0%3Bmax%2Dwidth%3Anone%3Bpadding%2Dright%3A0%7D%7D%23logo%7Bbackground%3Aurl%28%2F%2Fwww%2Egoogle%2Ecom%2Fimages%2Fbranding%2Fgooglelogo%2F1x%2Fgooglelogo%5Fcolor%5F150x54dp%2Epng%29%20no%2Drepeat%3Bmargin%2Dleft%3A%2D5px%7D%40media%20only%20screen%20and%20%28min%2Dresolution%3A192dpi%29%7B%23logo%7Bbackground%3Aurl%28%2F%2Fwww%2Egoogle%2Ecom%2Fimages%2Fbranding%2Fgooglelogo%2F2x%2Fgooglelogo%5Fcolor%5F150x54dp%2Epng%29%20no%2Drepeat%200%25%200%25%2F100%25%20100%25%3B%2Dmoz%2Dborder%2Dimage%3Aurl%28%2F%2Fwww%2Egoogle%2Ecom%2Fimages%2Fbranding%2Fgooglelogo%2F2x%2Fgooglelogo%5Fcolor%5F150x54dp%2Epng%29%200%7D%7D%40media%20only%20screen%20and%20%28%2Dwebkit%2Dmin%2Ddevice%2Dpixel%2Dratio%3A2%29%7B%23logo%7Bbackground%3Aurl%28%2F%2Fwww%2Egoogle%2Ecom%2Fimages%2Fbranding%2Fgooglelogo%2F2x%2Fgooglelogo%5Fcolor%5F150x54dp%2Epng%29%20no%2Drepeat%3B%2Dwebkit%2Dbackground%2Dsize%3A100%25%20100%25%7D%7D%23logo%7Bdisplay%3Ainline%2Dblock%3Bheight%3A54px%3Bwidth%3A150px%7D%3C%2Fstyle%3E%3Cmain%20id%3D%22af%2Derror%2Dcontainer%22%20role%3D%22main%22%3E%3Ca%20href%3D%2F%2Fwww%2Egoogle%2Ecom%3E%3Cspan%20id%3Dlogo%20aria%2Dlabel%3DGoogle%20role%3Dimg%3E%3C%2Fspan%3E%3C%2Fa%3E%3Cp%3E%3Cb%3E404%2E%3C%2Fb%3E%20%3Cins%3EThat%E2%80%99s%20an%20error%2E%3C%2Fins%3E%3Cp%3EThe%20requested%20URL%20was%20not%20found%20on%20this%20server%2E%20%3Cins%3EThat%E2%80%99s%20all%20we%20know%2E%3C%2Fins%3E%3C%2Fmain%3E" rel="preconnect">
@@ -280,15 +348,47 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQR0RFRgvRCskAAAJgAAAAckdQT1Ndqu7ZAA
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#cs-javascript-helpers" id="toc-cs-javascript-helpers">C’s
-JavaScript Helpers</a></li>
+<li><a href="#auttaja" id="toc-auttaja">Auttaja</a></li>
+<li><a href="#functions" id="toc-functions">Functions</a>
+<ul>
+<li><a href="#byid" id="toc-byid">byId</a></li>
+<li><a href="#runsafe" id="toc-runsafe">runSafe</a></li>
+</ul></li>
+<li><a href="#classes" id="toc-classes">Classes</a>
+<ul>
+<li><a href="#attempt" id="toc-attempt">Attempt</a></li>
+</ul></li>
+<li><a href="#see-also" id="toc-see-also">See Also</a></li>
 </ul>
 </nav>
-<h1 id="cs-javascript-helpers">C’s JavaScript Helpers</h1>
+<h1 id="auttaja">Auttaja</h1>
 <blockquote>
-<p><strong>auttaja</strong> — helper, auxiliary, helpmate, helpmeet</p>
+<dl>
+<dt>auttaja</dt>
+<dd>
+helper, auxiliary, helpmate, helpmeet
+</dd>
+</dl>
 </blockquote>
-<p>A collection of small functions and classes that I commonly use in my
-projects.</p>
+<p>Auttaja is a collection of small functions and classes that I
+commonly use in my projects. Purely a convenience library.</p>
+<h1 id="functions">Functions</h1>
+<h2 id="byid">byId</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">byId</span>(id)</span></code></pre></div>
+<p>Alias for <code>document.getElementById</code>.</p>
+<h2 id="runsafe">runSafe</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">runSafe</span>(main)</span></code></pre></div>
+<p>Waits to run the given function until the webpage has loaded. Used to
+call main functions.</p>
+<h1 id="classes">Classes</h1>
+<h2 id="attempt">Attempt</h2>
+<p>Inverse of rust’s <code>Result</code> monad. I lack a concise
+explanation.</p>
+<h1 id="see-also">See Also</h1>
+<ul>
+<li><a href="https://github.com/ctwiebe23/auttaja">Github</a></li>
+<li><a href="https://ctwiebe23.github.io/auttaja">Online README</a></li>
+<li><a href="https://ctwiebe23.github.io/auttaja/changelog">Changelog</a></li>
+</ul>
 </body>
 </html>
