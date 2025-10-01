@@ -125,7 +125,7 @@ export const attempt = (value, fallback) => {
     case value === null:
     case value === undefined:
       return (fallback instanceof Attempt) ? fallback : new Failure(fallback)
-    
+
     default:
       return new Success(value)
   }
