@@ -1,11 +1,16 @@
 {
-  "name": "@ctwiebe23/helpers",
+  "name": "@ctwiebe23/auttaja",
   "version": "1.0.0",
-  "description": "Collection of helper functions I use in personal projects",
+  "description": "Collection of helper functions and classes I use in personal projects",
   "license": "MIT",
   "author": "C Wiebe <ctwiebe23@gmail.com>",
   "type": "module",
   "main": "index.js",
+  "homepage": "https://ctwiebe23.github.io/auttaja",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctwiebe23/auttaja.git"
+  },
   "scripts": {
   }
 }
