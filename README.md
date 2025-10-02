@@ -7,6 +7,14 @@ Auttaja is a collection of small functions and classes that I commonly use in
 my personal projects.  Purely a convenience library, nothing impressive or
 particularily useful.
 
+# Install
+
+The library is available on npm.
+
+```
+npm add @ctwiebe23/auttaja
+```
+
 # Functions
 
 ## byId
