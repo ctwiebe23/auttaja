@@ -1,10 +1,11 @@
-# Auttaja
+# Description
 
 > auttaja
 > : helper, auxiliary, helpmate, helpmeet
 
 Auttaja is a collection of small functions and classes that I commonly use in
-my projects.  Purely a convenience library.
+my personal projects.  Purely a convenience library, nothing impressive or
+particularily useful.
 
 # Functions
 
