@@ -11,5 +11,15 @@
     "type": "git",
     "url": "git+https://github.com/ctwiebe23/auttaja.git"
   },
-  "scripts": {}
+  "scripts": {},
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3"
+  },
+  "prettier": {
+      "semi": false,
+      "tabWidth": 4,
+      "trailingComma": "all",
+      "singleQuote": true
+  }
 }
