@@ -17,15 +17,15 @@ export const runSafe = (main: () => void) => {
     }
 }
 
-export const success = <T>(value: T) => new Success<T>(value)
-export const failure = <S>(value: S) => new Failure<S>(value)
+export const success = <T, S>(value: T) => new Success<T, S>(value)
+export const failure = <T, S>(value: S) => new Failure<T, S>(value)
 
 /**
  * Monad that acts as an inverse of rust's Result.
  */
-export type Attempt<T, S> = Success<T> | Failure<S>
+export type Attempt<T, S> = Success<T, S> | Failure<T, S>
 
-export class Success<T> {
+export class Success<T, S> {
     value: T
 
     constructor(value: T) {
@@ -40,7 +40,7 @@ export class Success<T> {
      * @param fn The function that would be applied to the attempt.
      * @returns This same success.
      */
-    bind<S>(fn: (fallback: S) => Attempt<T, S>): Success<T> {
+    bind<U>(fn: (fallback: S) => Attempt<T, U>): Success<T, S> {
         return this
     }
 
@@ -48,14 +48,14 @@ export class Success<T> {
      * @param fn The function that would be applied to the attempt.
      * @returns This same success.
      */
-    infer<S>(
+    infer(
         fn: (fallback: S) => T | Attempt<T, S> | null | undefined,
-    ): Success<T> {
+    ): Success<T, S> {
         return this
     }
 }
 
-export class Failure<S> {
+export class Failure<T, S> {
     value: S
 
     constructor(value: S) {
@@ -70,7 +70,7 @@ export class Failure<S> {
      * @param fn The function that will be applied to this failure.
      * @returns Another attempt.
      */
-    bind<T>(fn: (fallback: S) => Attempt<T, S>): Attempt<T, S> {
+    bind<U>(fn: (fallback: S) => Attempt<T, U>): Attempt<T, U> {
         return fn(this.value)
     }
 
@@ -78,7 +78,7 @@ export class Failure<S> {
      * @param fn The function that will be applied to this failure.
      * @returns Another attempt.
      */
-    infer<T>(
+    infer(
         fn: (fallback: S) => T | Attempt<T, S> | null | undefined,
     ): Attempt<T, S> {
         return attempt(fn(this.value), this)
@@ -92,7 +92,7 @@ export class Failure<S> {
  */
 export const attempt = <T, S>(
     value: T | Attempt<T, S> | null | undefined,
-    fallback: S | Failure<S>,
+    fallback: S | Failure<T, S>,
 ): Attempt<T, S> => {
     switch (true) {
         case value instanceof Success:
@@ -101,9 +101,11 @@ export const attempt = <T, S>(
 
         case value === null:
         case value === undefined:
-            return fallback instanceof Failure ? fallback : failure(fallback)
+            return fallback instanceof Failure
+                ? fallback
+                : new Failure(fallback)
 
         default:
-            return success(value)
+            return new Success<T, S>(value)
     }
 }
